@@ -1,0 +1,36 @@
+<div class="banner-container">
+  <div class="banner-nav-bar">
+    <div><i class="fa-solid fa-film"></i></div>
+    <div>
+      <ul>
+        <li class="botão"><%= link_to "My Lists", lists_path %></li>
+        <li class="botão"><%= link_to "New list", new_list_path %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dGhlYXRlcnxlbnwwfHwwfHx8MA%3D%3D);">
+  <div class="container">
+    <h1><%= @list.name %> Movies</h1>
+  </div>
+</div>
+
+<div class="movies-container">
+  <%= link_to 'Add Bookmark', new_list_bookmark_path(@list), class: 'add-bookmark-btn' %>
+  <ul class="bookmarks-list">
+    <% @list.bookmarks.each do |bookmark| %>
+      <li class="bookmark-item">
+        <img src="<%= bookmark.movie.poster_url %>" alt="<%= bookmark.movie.title %>" class="movie-poster">
+        <div class="bookmark-info">
+          <p><%= bookmark.movie.title %> - <%= bookmark.comment %></p>
+          <%= link_to 'Delete', list_bookmark_path(@list, bookmark), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: 'delete-btn' %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+  <div class="back-links">
+    <%= link_to "Back to Lists", lists_path, class: 'back-btn' %>
+    <%= link_to 'Delete List', list_path(@list), data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" }, class: 'delete-list-btn' %>
+  </div>
+</div>

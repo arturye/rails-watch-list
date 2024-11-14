@@ -1,0 +1,407 @@
+// Graphical variables
+@import "config/fonts";
+@import "config/colors";
+@import "config/bootstrap_variables";
+
+// External libraries
+@import "bootstrap";
+@import "font-awesome";
+
+// Your CSS partials
+@import "components/index";
+@import "pages/index";
+
+.banner-container {
+  display: flex;
+  width: 100%;
+  border: 1px solid black;
+  height: 45px;
+}
+
+.banner-nav-bar {
+  display: flex;
+  width: 100%;
+  justify-content: space-between; /* This will space out the items */
+  align-items: center; /* This centers items vertically */
+}
+
+.banner-nav-bar i {
+  font-size: 40px;
+  margin-left: 20px;
+}
+
+.banner-nav-bar ul {
+  display: flex; /* Ensures the list items are inline */
+  margin: 0;
+  padding: 0;
+}
+
+.banner-nav-bar li {
+  cursor: pointer;
+  list-style: none;
+  display: inline;
+  padding: 0 10px; /* Optional for spacing between list items */
+}
+
+/* Move the list items a bit to the right */
+.banner-nav-bar > div:last-child {
+  margin-right: 20px; /* Adjust this value as needed */
+}
+
+.banner-nav-bar li a{
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  display: flex; /* Enable Flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  text-align: center; /* Center text inside the h1 */
+  height: 70vh;
+}
+
+.banner h1 {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.cards-container {
+  width: 100%;
+}
+
+.header-yes {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.header-yes a {
+  text-decoration: none;
+  background-color: rgb(141, 191, 65);
+  border-radius: 5px;
+  padding: 10px;
+  color: white;
+}
+
+.header-yes a:hover {
+  background-color: rgb(120, 150, 75);
+  transition: 0.5s
+}
+
+.list-container ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.list-container li {
+  flex: 1 1 calc(33% - 20px); /* Adjust percentage as needed */
+  list-style-type: none;
+}
+
+
+.card-category a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+
+.card-category {
+  height: 200px; /* Adjust based on your needs */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+
+.list-container {
+  margin-bottom: 40px; /* Add margin below the list container to create space between lists and footer */
+}
+
+.cards-container {
+ /* Ensure some padding in cards-container for consistency */
+}
+
+.footer {
+  background-color: #111; /* Make the entire footer black */
+  color: white;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
+}
+
+.footer-logo i {
+  margin-right: 10px;
+  font-size: 2rem;
+}
+
+.footer-links ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.footer-links li {
+  font-size: 1rem;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+  color: #ff6347;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px 0; /* Padding to add some space above and below the copyright text */
+  font-size: 0.9rem;
+}
+
+.footer-bottom p {
+  margin: 0;
+}
+
+
+
+.banner-container {
+  background-color: #111;
+  color: white;
+  padding: 20px 0;
+}
+
+.banner-nav-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.banner-nav-bar i {
+  font-size: 1.5rem;
+}
+
+.banner-nav-bar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.banner-nav-bar .botão a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 60px 0;
+  text-align: center;
+  color: white;
+}
+
+.movies-container {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.add-bookmark-btn {
+  display: inline-block;
+  background-color: #ff6347;
+  padding: 10px 20px;
+  color: white;
+  font-size: 1rem;
+  text-decoration: none;
+  margin-bottom: 20px;
+}
+
+.bookmarks-list {
+  list-style: none;
+  padding: 0;
+}
+
+.bookmark-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.movie-poster {
+  width: 100px;
+  height: 150px;
+  object-fit: cover;
+  margin-right: 20px;
+}
+
+.bookmark-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.delete-btn {
+  color: red;
+  text-decoration: none;
+}
+
+.delete-btn:hover {
+  text-decoration: underline;
+}
+
+.back-links {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.back-btn,
+.delete-list-btn {
+  background-color: #111;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.back-btn:hover,
+.delete-list-btn:hover {
+  background-color: #ff6347;
+}
+
+
+.banner-container {
+  background-color: #111;
+  color: white;
+  padding: 20px 0;
+}
+
+.banner-nav-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+}
+
+.banner-nav-bar i {
+  font-size: 1.5rem;
+}
+
+.banner-nav-bar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.banner-nav-bar .botão a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 60px 0;
+  text-align: center;
+  color: white;
+}
+
+.bookmark-form-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #222;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  color: white;
+}
+
+.input-comment, .input-movie {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+.input-comment:focus, .input-movie:focus {
+  border-color: #ff6347;
+  outline: none;
+}
+
+.btn-submit {
+  background-color: #ff6347;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  width: 100%;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: #e5533e;
+}
+
+.back-links {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.back-btn {
+  background-color: #111;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-size: 1rem;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.back-btn:hover {
+  background-color: #ff6347;
+}

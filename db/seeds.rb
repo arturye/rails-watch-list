@@ -7,3 +7,26 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+# db/seeds.rb
+
+require 'open-uri'
+require 'json'
+
+puts "deleting db"
+Movie.destroy_all
+
+url = 'https://tmdb.lewagon.com/movie/top_rated'
+serialized_movies = URI.open(url).read
+movies = JSON.parse(serialized_movies)["results"]
+
+movies.each do |movie|
+  Movie.create!(
+    title: movie["original_title"],
+    overview: movie["overview"],
+    poster_url: "https://image.tmdb.org/t/p/w500#{movie['poster_path']}",
+    rating: movie["vote_average"]
+  )
+end
+
+puts "Created #{movies.count} movies."
+ 

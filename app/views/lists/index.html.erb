@@ -1,0 +1,54 @@
+<div class="banner-container">
+  <div class="banner-nav-bar">
+    <div><i class="fa-solid fa-film"></i></div>
+    <div>
+      <ul>
+        <li class="botão">My lists</li>
+        <li class="botão"><%= link_to "New list", new_list_path %></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dGhlYXRlcnxlbnwwfHwwfHx8MA%3D%3D);">
+  <div class="container">
+    <h1>Save any kind of movies</h1>
+  </div>
+</div>
+
+<div class="cards-container">
+<div class="header-yes">
+<h1>My Lists</h1>
+<%= link_to 'Create a movie list', new_list_path%>
+</div>
+
+<div class="list-container">
+  <ul>
+    <% @lists.each do |list| %>
+      <li>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://images.unsplash.com/photo-1677344297888-81f04aa12a60?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)">
+          <%= link_to list.name, list_path(list) %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+<div class="footer">
+  <div class="footer-container">
+    <div class="footer-logo">
+      <i class="fa-solid fa-film"></i>
+      <span>Movie Lists</span>
+    </div>
+    <div class="footer-links">
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; <%= Time.now.year %> Movie Lists. All Rights Reserved.</p>
+  </div>
+</div>
