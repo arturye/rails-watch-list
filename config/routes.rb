@@ -1,18 +1,11 @@
-# config/routes.rb
 
 Rails.application.routes.draw do
-  get 'movies/index'
-  get 'movies/show'
-  get 'movies/new'
-  get 'movies/create'
-  get 'movies/edit'
-  get 'movies/update'
-  get 'movies/destroy'
-  root to: 'lists#index'
-
-  resources :lists do
-    resources :bookmarks
+  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  root to: "lists#index"
+  resources :lists, except: [:edit, :update] do
+    resources :bookmarks, only: [:new, :create]
+    resources :reviews, only: :create
   end
-
-  resources :movies
+  resources :bookmarks, only: :destroy
+  resources :reviews, only: :destroy
 end
